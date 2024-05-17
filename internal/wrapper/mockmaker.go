@@ -249,9 +249,9 @@ func (mm *MockMaker) String() string {
 		coma = ","
 		for i, p := range f.Params {
 			if p.Name == "" {
-				p.Name = fmt.Sprintf("param%v", i)
+				p.Name = fmt.Sprintf("&param%v", i)
 			}
-			c(coma, p.Name)
+			c(coma, "&"+p.Name)
 			coma = ", "
 		}
 		c(")\n")
